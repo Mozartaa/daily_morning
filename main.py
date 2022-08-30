@@ -72,7 +72,7 @@ def get_words():
   tem=math.floor(weather['temp'])
   if tem<20:
       return "天凉记得加衣哦！"
-    return "今天也要开心哦！"
+  return "今天也要开心哦！"
 
 def format_temperature(temperature):
   return math.floor(temperature)
