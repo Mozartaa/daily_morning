@@ -69,10 +69,10 @@ def get_birthday_left():
 
 # 彩虹屁 接口不稳定，所以失败的话会重新调用，直到成功
 def get_words():
-  words = requests.get("https://api.shadiao.pro/chp")
-  if words.status_code != 200:
-    return get_words()
-  return words.json()['data']['text']
+  tem=math.floor(weather['temp'])
+  if tem<20:
+      return "天凉记得加衣哦！"
+    return "今天也要开心哦！"
 
 def format_temperature(temperature):
   return math.floor(temperature)
