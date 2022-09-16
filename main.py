@@ -75,6 +75,7 @@ def get_birthday_left():
 #   return "今天也要开心哦！"
 def get_words():
   words = requests.get("https://api.vvhan.com/api/love")
+  print(words)
   if words.status_code != 200:
     return "今天要开心哦"
   return words.content
