@@ -68,11 +68,16 @@ def get_birthday_left():
   return (next - today).days
 
 # 彩虹屁 接口不稳定，所以失败的话会重新调用，直到成功
+# def get_words():
+#   tem=math.floor(weather['temp'])
+#   if tem<20:
+#       return "天凉记得加衣哦！"
+#   return "今天也要开心哦！"
 def get_words():
-  tem=math.floor(weather['temp'])
-  if tem<20:
-      return "天凉记得加衣哦！"
-  return "今天也要开心哦！"
+  words = requests.get("https://api.vvhan.com/api/love")
+  if words.status_code != 200:
+    return "今天要开心哦"
+  return words.content
 
 def format_temperature(temperature):
   return math.floor(temperature)
